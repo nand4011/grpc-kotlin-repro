@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package foo;
+
+service Foo {
+  rpc PutFoo(_PutFooRequest) returns (_PutFooResponse) {}
+}
+
+message _FooId {
+  string foo_name = 1;
+}
+
+message _Foo {
+  _FooId foo_id = 1;
+}
+
+message _PutFooRequest {
+  _Foo foo = 1;
+}
+
+message _PutFooResponse {
+  string response_string = 1;
+}
